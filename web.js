@@ -5,7 +5,7 @@ var fs = require('fs');
 var text = fs.readFileSync('index.html');
 
 app.get('/', function(request, response) {
-    response.send(text.toSTring('utf-8'));
+    response.send(text.toString('utf-8'));
 });
 
 var port = process.env.PORT || 5000;
