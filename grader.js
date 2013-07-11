@@ -85,6 +85,13 @@ if(require.main == module) {
     var checkJson = checkHtmlFile(program.file, program.checks);
     var outJson = JSON.stringify(checkJson, null, 4);
     console.log(outJson);
+    fs.writeFile("testResults.json", outJson, function(err){
+	if(err){
+	    console.log(err);
+	    }
+	else {
+	    console.log("File Saved... Boom!");
+	}});
 } else {
     exports.checkHtmlFile = checkHtmlFile;
 }
